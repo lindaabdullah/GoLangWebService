@@ -17,6 +17,8 @@
 //  5. GET /task/getAll - Get all tasks
 //  6. POST /task/login - Login to the service
 //  7. GET /metrics - Display Prometheus metrics
+//
+// You may use godoc -http=:6060 to view the documentation in your browser.
 package main
 
 import (
