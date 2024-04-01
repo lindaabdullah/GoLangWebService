@@ -1,0 +1,28 @@
+version: '3.8'
+services:
+    db:
+        image: mysql:8.0-debian
+        restart: always
+        environment:
+            MYSQL_ROOT_PASSWORD: $DB_PASSWORD
+            MYSQL_DATABASE: taskdb
+            MYSQL_ROOT_HOST: '%'
+        volumes:
+            - ./db:/var/lib/mysql
+            - ./tables.sql:/docker-entrypoint-initdb.d/tables.sql
+        ports:
+            - 3306:3306
+        healthcheck:
+            test: "/usr/bin/mysql --user=root --password=$DB_PASSWORD --execute \"SHOW DATABASES;\""
+            interval: 2s
+            timeout: 60s
+            retries: 30
+    app:
+        build: .
+        env_file:
+            - .env
+        ports:
+            - 8080:8080
+        depends_on:
+            db:
+                condition: service_healthy
