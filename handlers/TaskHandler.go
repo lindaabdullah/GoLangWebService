@@ -60,7 +60,7 @@ func Initialize() {
 		User:   os.Getenv("DB_USERNAME"),
 		Passwd: os.Getenv("DB_PASSWORD"),
 		Net:    "tcp",
-		Addr:   os.Getenv("DB_ADDRESS"),
+		Addr:   os.Getenv("DB_ADDRESS")+":3307",
 		DBName: "taskdb",
 		AllowNativePasswords: true,
 	}

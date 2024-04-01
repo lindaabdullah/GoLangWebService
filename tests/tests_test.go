@@ -148,11 +148,11 @@ func TestCreateTaskHandler(t *testing.T) {
 	if !ok {
 		t.Error("Description field not found or not a string")
 	}
-	number, ok := responseBody["number"].(int)
+	number, ok := responseBody["number"]
 	if !ok {
 		t.Error("Number field not found or not an int")
 	}
-	result, ok := responseBody["result"].(int)
+	result, ok := responseBody["result"]
 	if !ok {
 		t.Error("Result field not found or not an int")
 	}
@@ -223,11 +223,11 @@ func TestUpdateTaskHandler(t *testing.T) {
 	if !ok {
 		t.Error("Description field not found or not a string")
 	}
-	number, ok := responseBody["number"].(int)
+	number, ok := responseBody["number"]
 	if !ok {
 		t.Error("Number field not found or not an int")
 	}
-	result, ok := responseBody["result"].(int)
+	result, ok := responseBody["result"]
 	if !ok {
 		t.Error("Result field not found or not an int")
 	}
@@ -280,11 +280,11 @@ func TestGetTaskHandler(t *testing.T) {
 	if !ok {
 		t.Error("Description field not found or not a string")
 	}
-	number, ok := responseBody["number"].(int)
+	number, ok := responseBody["number"]
 	if !ok {
 		t.Error("Number field not found or not an int")
 	}
-	result, ok := responseBody["result"].(int)
+	result, ok := responseBody["result"]
 	if !ok {
 		t.Error("Result field not found or not an int")
 	}
